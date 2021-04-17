@@ -1,4 +1,3 @@
-library(matrixcalc)
 ## The following functions will cache the inverse of a matrix
 
 ## This function create a special "matrix" object that can cache its inverse. 
@@ -24,13 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
             getinv = getinv)
 }
 
-
 ## This function computes the inverse of the matrix returned by the makeCacheMatrix function. 
 ## The inverse is retrieved from the cache if it has already been calculated 
 ## and the matrix has no changed
 
 cacheSolve <- function(x, ...) {
-       ## Return a matrix that is the inverse of 'x'
        inv <- x$getinv() 
        if (!is.null(inv)) {
               message("getting cached data")
